@@ -1,6 +1,6 @@
 package com.ticketmanagement.ticketing.model.entity;
 
-import com.ticketmanagement.ticketing.model.enums.ticketStatus;
+import com.ticketmanagement.ticketing.enums.ticketStatus;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

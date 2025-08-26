@@ -1,4 +1,4 @@
-package com.ticketmanagement.ticketing.model.enums;
+package com.ticketmanagement.ticketing.enums;
 
 public enum ticketStatus {
     AVAILABLE, BOOKED, SOLD
