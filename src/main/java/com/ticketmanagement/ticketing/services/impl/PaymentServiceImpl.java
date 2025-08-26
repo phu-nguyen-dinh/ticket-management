@@ -1,33 +1,53 @@
 package com.ticketmanagement.ticketing.services.impl;
 
 import com.ticketmanagement.ticketing.dto.PaymentDTO;
+import com.ticketmanagement.ticketing.mapper.PaymentMapper;
+import com.ticketmanagement.ticketing.model.entity.PaymentEntity;
+import com.ticketmanagement.ticketing.repository.PaymentRepository;
 import com.ticketmanagement.ticketing.services.PaymentService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PaymentServiceImpl implements PaymentService {
+    @Autowired
+    private PaymentRepository paymentRepository;
+
     @Override
     public PaymentDTO createPayment(PaymentDTO paymentDTO) {
-        return null;
+        PaymentEntity payment = PaymentMapper.toEntity(paymentDTO);
+        paymentRepository.save(payment);
+        return PaymentMapper.toDTO(payment);
     }
 
     @Override
     public PaymentDTO getPaymentById(Integer paymentId) {
-        return null;
+        PaymentEntity payment = paymentRepository.findById(paymentId)
+                .orElseThrow(() -> new RuntimeException("Payment not found"));
+        return PaymentMapper.toDTO(payment);
     }
 
     @Override
     public List<PaymentDTO> getAllPayments() {
-        return List.of();
+        return paymentRepository.findAll()
+                .stream().map(PaymentMapper::toDTO)
+                .collect(Collectors.toList());
     }
 
     @Override
     public PaymentDTO updatePayment(Integer paymentId, PaymentDTO paymentDTO) {
-        return null;
+        PaymentEntity payment = paymentRepository.findById(paymentId)
+                .orElseThrow(() -> new RuntimeException("Payment not found"));
+        payment.setPaymentMethod(paymentDTO.getPaymentMethod());
+        payment.setAmount(paymentDTO.getAmount());
+        payment.setPaymentTime(paymentDTO.getPaymentTime());
+        paymentRepository.save(payment);
+        return PaymentMapper.toDTO(payment);
     }
 
     @Override
     public void deletePayment(Integer paymentId) {
-
+        paymentRepository.deleteById(paymentId);
     }
 }
