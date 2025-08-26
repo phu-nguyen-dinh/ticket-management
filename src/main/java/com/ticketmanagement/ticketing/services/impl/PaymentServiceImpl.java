@@ -6,10 +6,12 @@ import com.ticketmanagement.ticketing.model.entity.PaymentEntity;
 import com.ticketmanagement.ticketing.repository.PaymentRepository;
 import com.ticketmanagement.ticketing.services.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class PaymentServiceImpl implements PaymentService {
     @Autowired
     private PaymentRepository paymentRepository;

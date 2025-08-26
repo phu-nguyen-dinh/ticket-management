@@ -7,10 +7,12 @@ import com.ticketmanagement.ticketing.model.entity.BookingEntity;
 import com.ticketmanagement.ticketing.repository.BookingRepository;
 import com.ticketmanagement.ticketing.services.BookingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class BookingServiceImpl implements BookingService {
     @Autowired
     private BookingRepository bookingRepository;

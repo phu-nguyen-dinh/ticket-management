@@ -6,10 +6,12 @@ import com.ticketmanagement.ticketing.model.entity.TicketEntity;
 import com.ticketmanagement.ticketing.repository.TicketRepository;
 import com.ticketmanagement.ticketing.services.TicketService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class TicketServiceImpl implements TicketService {
     @Autowired
     private TicketRepository ticketRepository;
