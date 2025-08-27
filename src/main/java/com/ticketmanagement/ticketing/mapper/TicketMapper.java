@@ -2,6 +2,8 @@ package com.ticketmanagement.ticketing.mapper;
 
 import com.ticketmanagement.ticketing.dto.TicketDTO;
 import com.ticketmanagement.ticketing.enums.TicketStatus;
+import com.ticketmanagement.ticketing.model.entity.SeatEntity;
+import com.ticketmanagement.ticketing.model.entity.ShowtimeEntity;
 import com.ticketmanagement.ticketing.model.entity.TicketEntity;
 
 public class TicketMapper {
@@ -24,6 +26,16 @@ public class TicketMapper {
         ticket.setPrice(dto.getPrice());
         if (dto.getStatus() != null) {
             ticket.setStatus(TicketStatus.valueOf(dto.getStatus()));
+        }
+        if (dto.getShowtime_id() != null) {
+            ShowtimeEntity showtime = new ShowtimeEntity();
+            showtime.setShowtime_id(dto.getShowtime_id());
+            ticket.setShowtime(showtime);
+        }
+        if (dto.getSeat_id() != null) {
+            SeatEntity seat = new SeatEntity();
+            seat.setSeat_id(dto.getSeat_id());
+            ticket.setSeat(seat);
         }
         return ticket;
     }

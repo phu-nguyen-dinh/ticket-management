@@ -1,6 +1,8 @@
 package com.ticketmanagement.ticketing.mapper;
 
 import com.ticketmanagement.ticketing.dto.ShowtimeDTO;
+import com.ticketmanagement.ticketing.model.entity.EventEntity;
+import com.ticketmanagement.ticketing.model.entity.RoomEntity;
 import com.ticketmanagement.ticketing.model.entity.ShowtimeEntity;
 
 public class ShowtimeMapper {
@@ -21,6 +23,16 @@ public class ShowtimeMapper {
         showtime.setShowtime_id(dto.getShowtime_id());
         showtime.setStart_time(dto.getStart_time());
         showtime.setEnd_time(dto.getEnd_time());
+        if (dto.getEvent_id() != null) {
+            EventEntity event = new EventEntity();
+            event.setEvent_id(dto.getEvent_id());
+            showtime.setEvent(event);
+        }
+        if (dto.getRoom_id() != null) {
+            RoomEntity room = new RoomEntity();
+            room.setRoom_id(dto.getRoom_id());
+            showtime.setRoom(room);
+        }
         return showtime;
     }
 }

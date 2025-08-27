@@ -44,6 +44,9 @@ public class BookingServiceImpl implements BookingService {
                 .orElseThrow(() -> new RuntimeException("Booking not found"));
         booking.setBooking_time(bookingDTO.getBooking_time());
         booking.setTotal_amount(bookingDTO.getTotal_amount());
+        if (bookingDTO.getStatus() != null) {
+            booking.setStatus(BookingStatus.valueOf(bookingDTO.getStatus()));
+        }
         bookingRepository.save(booking);
         return BookingMapper.toDTO(booking);
     }

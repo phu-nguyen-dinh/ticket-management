@@ -1,6 +1,7 @@
 package com.ticketmanagement.ticketing.mapper;
 
 import com.ticketmanagement.ticketing.dto.RoomDTO;
+import com.ticketmanagement.ticketing.model.entity.LocationEntity;
 import com.ticketmanagement.ticketing.model.entity.RoomEntity;
 
 public class RoomMapper {
@@ -18,6 +19,11 @@ public class RoomMapper {
         RoomEntity room = new RoomEntity();
         room.setRoom_id(dto.getRoom_id());
         room.setRoom_name(dto.getRoom_name());
+        if (dto.getLocation_id() != null) {
+            LocationEntity loc = new LocationEntity();
+            loc.setLocation_id(dto.getLocation_id());
+            room.setLocation(loc);
+        }
         return room;
     }
 }

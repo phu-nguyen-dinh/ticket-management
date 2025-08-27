@@ -2,6 +2,8 @@ package com.ticketmanagement.ticketing.mapper;
 
 import com.ticketmanagement.ticketing.dto.BookingDetailDTO;
 import com.ticketmanagement.ticketing.model.entity.BookingDetailEntity;
+import com.ticketmanagement.ticketing.model.entity.BookingEntity;
+import com.ticketmanagement.ticketing.model.entity.TicketEntity;
 
 public class BookingDetailMapper {
     public static BookingDetailDTO toDTO(BookingDetailEntity detail) {
@@ -19,6 +21,16 @@ public class BookingDetailMapper {
         BookingDetailEntity detail = new BookingDetailEntity();
         detail.setBooking_detail_id(dto.getBooking_detail_id());
         detail.setPrice(dto.getPrice());
+        if (dto.getBooking_id() != null) {
+            BookingEntity booking = new BookingEntity();
+            booking.setBooking_id(dto.getBooking_id());
+            detail.setBooking(booking);
+        }
+        if (dto.getTicket_id() != null) {
+            TicketEntity ticket = new TicketEntity();
+            ticket.setTicket_id(dto.getTicket_id());
+            detail.setTicket(ticket);
+        }
         return detail;
     }
 }

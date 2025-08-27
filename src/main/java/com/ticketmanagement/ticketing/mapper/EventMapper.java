@@ -2,6 +2,7 @@ package com.ticketmanagement.ticketing.mapper;
 
 import com.ticketmanagement.ticketing.dto.EventDTO;
 import com.ticketmanagement.ticketing.model.entity.EventEntity;
+import com.ticketmanagement.ticketing.model.entity.LocationEntity;
 
 public class EventMapper {
     public static EventDTO toDTO(EventEntity event) {

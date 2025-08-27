@@ -3,6 +3,8 @@ package com.ticketmanagement.ticketing.mapper;
 import com.ticketmanagement.ticketing.dto.BookingDTO;
 import com.ticketmanagement.ticketing.enums.BookingStatus;
 import com.ticketmanagement.ticketing.model.entity.BookingEntity;
+import com.ticketmanagement.ticketing.model.entity.CustomerEntity;
+import com.ticketmanagement.ticketing.model.entity.UserEntity;
 
 public class BookingMapper {
 
@@ -26,6 +28,16 @@ public class BookingMapper {
         booking.setTotal_amount(dto.getTotal_amount());
         if (dto.getStatus() != null) {
             booking.setStatus(BookingStatus.valueOf(dto.getStatus()));
+        }
+        if (dto.getUser_id() != null) {
+            UserEntity user = new UserEntity();
+            user.setUser_id(dto.getUser_id());
+            booking.setUser(user);
+        }
+        if (dto.getCust_id() != null) {
+            CustomerEntity customer = new CustomerEntity();
+            customer.setCust_id(dto.getCust_id());
+            booking.setCustomer(customer);
         }
         return booking;
     }

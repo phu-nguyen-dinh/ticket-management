@@ -8,7 +8,7 @@ import lombok.Setter;
 public class SeatDTO {
     private Integer seat_id;
     private Integer room_id;
-    private String row;
+    private String row_name;
     private Integer number;
     private String seat_type; // VIP, Normal
 }

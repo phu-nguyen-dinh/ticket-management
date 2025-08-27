@@ -2,6 +2,7 @@ package com.ticketmanagement.ticketing.mapper;
 
 import com.ticketmanagement.ticketing.dto.PaymentDTO;
 import com.ticketmanagement.ticketing.enums.PaymentStatus;
+import com.ticketmanagement.ticketing.model.entity.BookingEntity;
 import com.ticketmanagement.ticketing.model.entity.PaymentEntity;
 
 public class PaymentMapper {
@@ -26,6 +27,11 @@ public class PaymentMapper {
         payment.setPayment_time(dto.getPayment_time());
         if (dto.getStatus() != null) {
             payment.setStatus(PaymentStatus.valueOf(dto.getStatus()));
+        }
+        if (dto.getBooking_id() != null) {
+            BookingEntity booking = new BookingEntity();
+            booking.setBooking_id(dto.getBooking_id());
+            payment.setBooking(booking);
         }
         return payment;
     }
