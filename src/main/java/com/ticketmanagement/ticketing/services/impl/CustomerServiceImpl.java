@@ -42,9 +42,9 @@ public class CustomerServiceImpl implements CustomerService {
     public CustomerDTO updateCustomer(Integer custId, CustomerDTO customerDTO) {
         CustomerEntity customer = customerRepository.findById(custId)
                 .orElseThrow(() -> new RuntimeException("Customer not found"));
-        customer.setFirstName(customerDTO.getFirstName());
-        customer.setLastName(customerDTO.getLastName());
-        customer.setPhoneNumber(customerDTO.getPhoneNumber());
+        customer.setFirst_name(customerDTO.getFirst_name());
+        customer.setLast_name(customerDTO.getLast_name());
+        customer.setPhone_number(customerDTO.getPhone_number());
         customer.setEmail(customerDTO.getEmail());
         customer.setAddress(customerDTO.getAddress());
         customerRepository.save(customer);

@@ -43,10 +43,10 @@ public class SeatServiceImpl implements SeatService {
     public SeatDTO updateSeat(Integer seatId, SeatDTO seatDTO) {
         SeatEntity seat = seatRepository.findById(seatId)
                 .orElseThrow(() -> new RuntimeException("Seat not found"));
-        seat.setRow(seatDTO.getRow());
+        seat.setRow_name(seatDTO.getRow());
         seat.setNumber(seatDTO.getNumber());
-        if (seatDTO.getSeatType() != null) {
-            seat.setSeatType(SeatType.valueOf(seatDTO.getSeatType().toUpperCase()));
+        if (seatDTO.getSeat_type() != null) {
+            seat.setSeat_type(SeatType.valueOf(seatDTO.getSeat_type().toUpperCase()));
         }
         seatRepository.save(seat);
         return SeatMapper.toDTO(seat);

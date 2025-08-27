@@ -12,18 +12,21 @@ import lombok.Setter;
 public class TicketEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer ticketId;
+    @Column(name = "ticket_id")
+    private Integer ticket_id;
 
     @ManyToOne
-    @JoinColumn(name = "showtimeId")
+    @JoinColumn(name = "showtime_id")
     private ShowtimeEntity showtime;
 
     @ManyToOne
-    @JoinColumn(name = "seatId")
+    @JoinColumn(name = "seat_id")
     private SeatEntity seat;
 
+    @Column(name = "price")
     private Double price;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "status")
     private TicketStatus status;
 }

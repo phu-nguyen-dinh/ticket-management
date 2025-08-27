@@ -42,7 +42,7 @@ public class RoomServiceImpl implements RoomService {
     public RoomDTO updateRoom(Integer roomId, RoomDTO roomDTO) {
         RoomEntity room = roomRepository.findById(roomId)
                 .orElseThrow(() -> new RuntimeException("Room not found"));
-        room.setRoomName(roomDTO.getRoomName());
+        room.setRoom_name(roomDTO.getRoom_name());
         roomRepository.save(room);
         return RoomMapper.toDTO(room);
     }

@@ -41,9 +41,9 @@ public class PaymentServiceImpl implements PaymentService {
     public PaymentDTO updatePayment(Integer paymentId, PaymentDTO paymentDTO) {
         PaymentEntity payment = paymentRepository.findById(paymentId)
                 .orElseThrow(() -> new RuntimeException("Payment not found"));
-        payment.setPaymentMethod(paymentDTO.getPaymentMethod());
+        payment.setPayment_method(paymentDTO.getPayment_method());
         payment.setAmount(paymentDTO.getAmount());
-        payment.setPaymentTime(paymentDTO.getPaymentTime());
+        payment.setPayment_time(paymentDTO.getPayment_time());
         paymentRepository.save(payment);
         return PaymentMapper.toDTO(payment);
     }

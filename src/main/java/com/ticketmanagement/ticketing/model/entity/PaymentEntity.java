@@ -14,16 +14,23 @@ import java.time.LocalDateTime;
 public class PaymentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer paymentId;
+    @Column(name = "payment_id")
+    private Integer payment_id;
 
     @OneToOne
-    @JoinColumn(name = "bookingId")
+    @JoinColumn(name = "booking_id")
     private BookingEntity booking;
 
-    private String paymentMethod;
+    @Column(name = "payment_method")
+    private String payment_method;
+
+    @Column(name = "amount")
     private Double amount;
-    private LocalDateTime paymentTime;
+
+    @Column(name = "payment_time")
+    private LocalDateTime payment_time;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "status")
     private PaymentStatus status;
 }

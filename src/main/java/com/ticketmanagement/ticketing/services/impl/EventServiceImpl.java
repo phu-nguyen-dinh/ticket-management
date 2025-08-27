@@ -45,8 +45,8 @@ public class EventServiceImpl implements EventService {
         event.setTitle(eventDTO.getTitle());
         event.setDescription(eventDTO.getDescription());
         event.setType(eventDTO.getType());
-        event.setStartTime(eventDTO.getStartTime());
-        event.setEndTime(eventDTO.getEndTime());
+        event.setStart_time(eventDTO.getStart_time());
+        event.setEnd_time(eventDTO.getEnd_time());
         eventRepository.save(event);
         return EventMapper.toDTO(event);
     }

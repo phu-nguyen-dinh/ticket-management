@@ -7,9 +7,9 @@ public class BookingDetailMapper {
     public static BookingDetailDTO toDTO(BookingDetailEntity detail) {
         if (detail == null) return null;
         BookingDetailDTO dto = new BookingDetailDTO();
-        dto.setBookingDetailId(detail.getBookingDetailId());
-        dto.setBookingId(detail.getBooking() != null ? detail.getBooking().getBookingId() : null);
-        dto.setTicketId(detail.getTicket() != null ? detail.getTicket().getTicketId() : null);
+        dto.setBooking_detail_id(detail.getBooking_detail_id());
+        dto.setBooking_id(detail.getBooking() != null ? detail.getBooking().getBooking_id() : null);
+        dto.setTicket_id(detail.getTicket() != null ? detail.getTicket().getTicket_id() : null);
         dto.setPrice(detail.getPrice());
         return dto;
     }
@@ -17,7 +17,7 @@ public class BookingDetailMapper {
     public static BookingDetailEntity toEntity(BookingDetailDTO dto) {
         if (dto == null) return null;
         BookingDetailEntity detail = new BookingDetailEntity();
-        detail.setBookingDetailId(dto.getBookingDetailId());
+        detail.setBooking_detail_id(dto.getBooking_detail_id());
         detail.setPrice(dto.getPrice());
         return detail;
     }

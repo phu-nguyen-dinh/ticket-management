@@ -8,11 +8,11 @@ public class PaymentMapper {
     public static PaymentDTO toDTO(PaymentEntity payment) {
         if (payment == null) return null;
         PaymentDTO dto = new PaymentDTO();
-        dto.setPaymentId(payment.getPaymentId());
-        dto.setBookingId(payment.getBooking() != null ? payment.getBooking().getBookingId() : null);
-        dto.setPaymentMethod(payment.getPaymentMethod());
+        dto.setPayment_id(payment.getPayment_id());
+        dto.setBooking_id(payment.getBooking() != null ? payment.getBooking().getBooking_id() : null);
+        dto.setPayment_method(payment.getPayment_method());
         dto.setAmount(payment.getAmount());
-        dto.setPaymentTime(payment.getPaymentTime());
+        dto.setPayment_time(payment.getPayment_time());
         dto.setStatus(payment.getStatus() != null ? payment.getStatus().name() : null);
         return dto;
     }
@@ -20,10 +20,10 @@ public class PaymentMapper {
     public static PaymentEntity toEntity(PaymentDTO dto) {
         if (dto == null) return null;
         PaymentEntity payment = new PaymentEntity();
-        payment.setPaymentId(dto.getPaymentId());
-        payment.setPaymentMethod(dto.getPaymentMethod());
+        payment.setPayment_id(dto.getPayment_id());
+        payment.setPayment_method(dto.getPayment_method());
         payment.setAmount(dto.getAmount());
-        payment.setPaymentTime(dto.getPaymentTime());
+        payment.setPayment_time(dto.getPayment_time());
         if (dto.getStatus() != null) {
             payment.setStatus(PaymentStatus.valueOf(dto.getStatus().toUpperCase()));
         }

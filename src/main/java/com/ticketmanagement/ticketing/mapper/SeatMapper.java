@@ -8,22 +8,22 @@ public class SeatMapper {
     public static SeatDTO toDTO(SeatEntity seat) {
         if (seat == null) return null;
         SeatDTO dto = new SeatDTO();
-        dto.setSeatId(seat.getSeatId());
-        dto.setRoomId(seat.getRoom() != null ? seat.getRoom().getRoomId() : null);
-        dto.setRow(seat.getRow());
+        dto.setSeat_id(seat.getSeat_id());
+        dto.setRoom_id(seat.getRoom() != null ? seat.getRoom().getRoom_id() : null);
+        dto.setRow(seat.getRow_name());
         dto.setNumber(seat.getNumber());
-        dto.setSeatType(seat.getSeatType() != null ? seat.getSeatType().name() : null);
+        dto.setSeat_type(seat.getSeat_type() != null ? seat.getSeat_type().name() : null);
         return dto;
     }
 
     public static SeatEntity toEntity(SeatDTO dto) {
         if (dto == null) return null;
         SeatEntity seat = new SeatEntity();
-        seat.setSeatId(dto.getSeatId());
-        seat.setRow(dto.getRow());
+        seat.setSeat_id(dto.getSeat_id());
+        seat.setRow_name(dto.getRow());
         seat.setNumber(dto.getNumber());
-        if (dto.getSeatType() != null) {
-            seat.setSeatType(SeatType.valueOf(dto.getSeatType().toUpperCase()));
+        if (dto.getSeat_type() != null) {
+            seat.setSeat_type(SeatType.valueOf(dto.getSeat_type().toUpperCase()));
         }
         return seat;
     }

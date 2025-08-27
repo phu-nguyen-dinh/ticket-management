@@ -13,10 +13,16 @@ import java.util.List;
 public class LocationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer locationId;
+    @Column(name = "location_id")
+    private Integer location_id;
 
-    private String locationName;
+    @Column(name = "location_name")
+    private String location_name;
+
+    @Column(name = "address")
     private String address;
+
+    @Column(name = "capacity")
     private Integer capacity;
 
     @OneToMany(mappedBy = "location")

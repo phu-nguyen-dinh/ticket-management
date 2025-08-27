@@ -8,10 +8,10 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 public class EventDTO {
-    private Integer eventId;
+    private Integer event_id;
     private String title;
     private String description;
     private String type;
-    private LocalDateTime startTime;
-    private LocalDateTime endTime;
+    private LocalDateTime start_time;
+    private LocalDateTime end_time;
 }

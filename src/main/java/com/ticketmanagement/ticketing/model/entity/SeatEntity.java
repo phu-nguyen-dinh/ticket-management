@@ -12,15 +12,20 @@ import lombok.Setter;
 public class SeatEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer seatId;
+    @Column(name = "seat_id")
+    private Integer seat_id;
 
     @ManyToOne
-    @JoinColumn(name = "roomId")
+    @JoinColumn(name = "room_id")
     private RoomEntity room;
 
-    private String row;
+    @Column(name = "row_name")
+    private String row_name;
+
+    @Column(name = "number")
     private Integer number;
 
     @Enumerated(EnumType.STRING)
-    private SeatType seatType;
+    @Column(name = "seat_type")
+    private SeatType seat_type;
 }

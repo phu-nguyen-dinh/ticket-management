@@ -8,9 +8,9 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 public class ShowtimeDTO {
-    private Integer showtimeId;
-    private Integer eventId;
-    private Integer roomId;
-    private LocalDateTime startTime;
-    private LocalDateTime endTime;
+    private Integer showtime_id;
+    private Integer event_id;
+    private Integer room_id;
+    private LocalDateTime start_time;
+    private LocalDateTime end_time;
 }

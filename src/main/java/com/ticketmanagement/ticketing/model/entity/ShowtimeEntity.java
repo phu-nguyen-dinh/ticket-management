@@ -14,18 +14,22 @@ import java.util.List;
 public class ShowtimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer showtimeId;
+    @Column(name = "showtime_id")
+    private Integer showtime_id;
 
     @ManyToOne
-    @JoinColumn(name = "eventId")
+    @JoinColumn(name = "event_id")
     private EventEntity event;
 
     @ManyToOne
-    @JoinColumn(name = "roomId")
+    @JoinColumn(name = "room_id")
     private RoomEntity room;
 
-    private LocalDateTime startTime;
-    private LocalDateTime endTime;
+    @Column(name = "start_time")
+    private LocalDateTime start_time;
+
+    @Column(name = "end_time")
+    private LocalDateTime end_time;
 
     @OneToMany(mappedBy = "showtime")
     private List<TicketEntity> tickets;

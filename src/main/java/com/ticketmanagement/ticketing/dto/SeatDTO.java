@@ -6,9 +6,9 @@ import lombok.Setter;
 @Setter
 @Getter
 public class SeatDTO {
-    private Integer seatId;
-    private Integer roomId;
+    private Integer seat_id;
+    private Integer room_id;
     private String row;
     private Integer number;
-    private String seatType; // VIP, Normal
+    private String seat_type; // VIP, Normal
 }

@@ -42,7 +42,7 @@ public class LocationServiceImpl implements LocationService {
     public LocationDTO updateLocation(Integer locationId, LocationDTO locationDTO) {
         LocationEntity location = locationRepository.findById(locationId)
                 .orElseThrow(() -> new RuntimeException("Location not found"));
-        location.setLocationName(locationDTO.getLocationName());
+        location.setLocation_name(locationDTO.getLocation_name());
         location.setAddress(locationDTO.getAddress());
         location.setCapacity(locationDTO.getCapacity());
         locationRepository.save(location);

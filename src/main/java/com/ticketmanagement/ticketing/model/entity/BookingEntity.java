@@ -15,24 +15,29 @@ import java.util.List;
 public class BookingEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer bookingId;
+    @Column(name = "booking_id")
+    private Integer booking_id;
 
     @ManyToOne
-    @JoinColumn(name = "userId")
+    @JoinColumn(name = "user_id")
     private UserEntity user;
 
     @ManyToOne
-    @JoinColumn(name = "custId")
+    @JoinColumn(name = "cust_id")
     private CustomerEntity customer;
 
-    private LocalDateTime bookingTime;
-    private Double totalAmount;
+    @Column(name = "booking_time")
+    private LocalDateTime booking_time;
+
+    @Column(name = "total_amount")
+    private Double total_amount;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "status")
     private BookingStatus status;
 
     @OneToMany(mappedBy = "booking")
-    private List<BookingDetailEntity> bookingDetails;
+    private List<BookingDetailEntity> booking_details;
 
     @OneToOne(mappedBy = "booking")
     private PaymentEntity payment;

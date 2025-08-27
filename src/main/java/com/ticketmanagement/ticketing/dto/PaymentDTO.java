@@ -8,10 +8,10 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 public class PaymentDTO {
-    private Integer paymentId;
-    private Integer bookingId;
-    private String paymentMethod;
+    private Integer payment_id;
+    private Integer booking_id;
+    private String payment_method;
     private Double amount;
-    private LocalDateTime paymentTime;
+    private LocalDateTime payment_time;
     private String status; // pending, paid, cancelled
 }

@@ -6,7 +6,7 @@ import lombok.Setter;
 @Setter
 @Getter
 public class RoomDTO {
-    private Integer roomId;
-    private Integer locationId;
-    private String roomName;
+    private Integer room_id;
+    private Integer location_id;
+    private String room_name;
 }

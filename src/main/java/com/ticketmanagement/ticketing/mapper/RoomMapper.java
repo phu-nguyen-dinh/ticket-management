@@ -7,17 +7,17 @@ public class RoomMapper {
     public static RoomDTO toDTO(RoomEntity room) {
         if (room == null) return null;
         RoomDTO dto = new RoomDTO();
-        dto.setRoomId(room.getRoomId());
-        dto.setLocationId(room.getLocation() != null ? room.getLocation().getLocationId() : null);
-        dto.setRoomName(room.getRoomName());
+        dto.setRoom_id(room.getRoom_id());
+        dto.setLocation_id(room.getLocation() != null ? room.getLocation().getLocation_id() : null);
+        dto.setRoom_name(room.getRoom_name());
         return dto;
     }
 
     public static RoomEntity toEntity(RoomDTO dto) {
         if (dto == null) return null;
         RoomEntity room = new RoomEntity();
-        room.setRoomId(dto.getRoomId());
-        room.setRoomName(dto.getRoomName());
+        room.setRoom_id(dto.getRoom_id());
+        room.setRoom_name(dto.getRoom_name());
         return room;
     }
 }

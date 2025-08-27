@@ -13,13 +13,15 @@ import java.util.List;
 public class RoomEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer roomId;
+    @Column(name = "room_id")
+    private Integer room_id;
 
     @ManyToOne
-    @JoinColumn(name = "locationId")
+    @JoinColumn(name = "location_id")
     private LocationEntity location;
 
-    private String roomName;
+    @Column(name = "room_name")
+    private String room_name;
 
     @OneToMany(mappedBy = "room")
     private List<SeatEntity> seats;

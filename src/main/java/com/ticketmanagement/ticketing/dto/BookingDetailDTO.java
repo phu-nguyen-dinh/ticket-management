@@ -6,8 +6,8 @@ import lombok.Setter;
 @Setter
 @Getter
 public class BookingDetailDTO {
-    private Integer bookingDetailId;
-    private Integer bookingId;
-    private Integer ticketId;
+    private Integer booking_detail_id;
+    private Integer booking_id;
+    private Integer ticket_id;
     private Double price;
 }

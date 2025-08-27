@@ -13,12 +13,22 @@ import java.util.List;
 public class CustomerEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer custId;
+    @Column(name = "cust_id")
+    private Integer cust_id;
 
-    private String firstName;
-    private String lastName;
-    private String phoneNumber;
+    @Column(name = "first_name")
+    private String first_name;
+
+    @Column(name = "last_name")
+    private String last_name;
+
+    @Column(name = "phone_number")
+    private String phone_number;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "address")
     private String address;
 
     @OneToMany(mappedBy = "customer")

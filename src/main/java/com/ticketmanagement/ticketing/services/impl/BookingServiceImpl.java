@@ -42,8 +42,8 @@ public class BookingServiceImpl implements BookingService {
     public BookingDTO updateBooking(Integer bookingId, BookingDTO bookingDTO) {
         BookingEntity booking = bookingRepository.findById(bookingId)
                 .orElseThrow(() -> new RuntimeException("Booking not found"));
-        booking.setBookingTime(bookingDTO.getBookingTime());
-        booking.setTotalAmount(bookingDTO.getTotalAmount());
+        booking.setBooking_time(bookingDTO.getBooking_time());
+        booking.setTotal_amount(bookingDTO.getTotal_amount());
         bookingRepository.save(booking);
         return BookingMapper.toDTO(booking);
     }

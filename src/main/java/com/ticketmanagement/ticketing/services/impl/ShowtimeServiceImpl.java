@@ -42,8 +42,8 @@ public class ShowtimeServiceImpl implements ShowtimeService {
     public ShowtimeDTO updateShowtime(Integer showtimeId, ShowtimeDTO showtimeDTO) {
         ShowtimeEntity showtime = showtimeRepository.findById(showtimeId)
                 .orElseThrow(() -> new RuntimeException("Showtime not found"));
-        showtime.setStartTime(showtimeDTO.getStartTime());
-        showtime.setEndTime(showtimeDTO.getEndTime());
+        showtime.setStart_time(showtimeDTO.getStart_time());
+        showtime.setEnd_time(showtimeDTO.getEnd_time());
         showtimeRepository.save(showtime);
         return ShowtimeMapper.toDTO(showtime);
     }

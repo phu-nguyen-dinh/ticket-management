@@ -11,15 +11,17 @@ import lombok.Setter;
 public class BookingDetailEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer bookingDetailId;
+    @Column(name = "booking_detail_id")
+    private Integer booking_detail_id;
 
     @ManyToOne
-    @JoinColumn(name = "bookingId")
+    @JoinColumn(name = "booking_id")
     private BookingEntity booking;
 
     @ManyToOne
-    @JoinColumn(name = "ticketId")
+    @JoinColumn(name = "ticket_id")
     private TicketEntity ticket;
 
+    @Column(name = "price")
     private Double price;
 }

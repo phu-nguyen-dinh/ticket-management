@@ -13,9 +13,13 @@ import java.util.List;
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer userId;
+    @Column(name = "user_id")
+    private Integer user_id;
 
+    @Column(name = "username")
     private String username;
+
+    @Column(name = "password")
     private String password;
 
     @OneToMany(mappedBy = "user")
