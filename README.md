@@ -75,7 +75,7 @@ CREATE DATABASE ticketing;
 ```
 Import schema:
 ```bash
-source schema.sql;
+source ticketing.sql;
 ```
 Thêm sample data:
 ```sql
