@@ -25,7 +25,7 @@ public class PaymentMapper {
         payment.setAmount(dto.getAmount());
         payment.setPayment_time(dto.getPayment_time());
         if (dto.getStatus() != null) {
-            payment.setStatus(PaymentStatus.valueOf(dto.getStatus().toUpperCase()));
+            payment.setStatus(PaymentStatus.valueOf(dto.getStatus()));
         }
         return payment;
     }

@@ -23,7 +23,7 @@ public class SeatMapper {
         seat.setRow_name(dto.getRow());
         seat.setNumber(dto.getNumber());
         if (dto.getSeat_type() != null) {
-            seat.setSeat_type(SeatType.valueOf(dto.getSeat_type().toUpperCase()));
+            seat.setSeat_type(SeatType.valueOf(dto.getSeat_type()));
         }
         return seat;
     }

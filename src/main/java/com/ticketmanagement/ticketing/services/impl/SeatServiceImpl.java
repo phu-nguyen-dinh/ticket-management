@@ -46,7 +46,7 @@ public class SeatServiceImpl implements SeatService {
         seat.setRow_name(seatDTO.getRow());
         seat.setNumber(seatDTO.getNumber());
         if (seatDTO.getSeat_type() != null) {
-            seat.setSeat_type(SeatType.valueOf(seatDTO.getSeat_type().toUpperCase()));
+            seat.setSeat_type(SeatType.valueOf(seatDTO.getSeat_type()));
         }
         seatRepository.save(seat);
         return SeatMapper.toDTO(seat);

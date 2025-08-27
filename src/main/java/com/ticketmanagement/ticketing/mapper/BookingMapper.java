@@ -25,7 +25,7 @@ public class BookingMapper {
         booking.setBooking_time(dto.getBooking_time());
         booking.setTotal_amount(dto.getTotal_amount());
         if (dto.getStatus() != null) {
-            booking.setStatus(BookingStatus.valueOf(dto.getStatus().toUpperCase()));
+            booking.setStatus(BookingStatus.valueOf(dto.getStatus()));
         }
         return booking;
     }

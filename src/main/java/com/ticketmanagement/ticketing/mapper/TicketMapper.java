@@ -23,7 +23,7 @@ public class TicketMapper {
         ticket.setTicket_id(dto.getTicket_id());
         ticket.setPrice(dto.getPrice());
         if (dto.getStatus() != null) {
-            ticket.setStatus(TicketStatus.valueOf(dto.getStatus().toUpperCase()));
+            ticket.setStatus(TicketStatus.valueOf(dto.getStatus()));
         }
         return ticket;
     }
